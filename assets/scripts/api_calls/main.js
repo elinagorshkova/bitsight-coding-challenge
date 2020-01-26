@@ -3,6 +3,7 @@
 //  Getting data from the github application
 const addHandlers = () => {
   $('#hot_repo').on('click', getTopRepos)
+  $('#prolific_users').on('click', getTopUsers)
 }
 
 const getTopRepos = () => {
@@ -20,10 +21,19 @@ const getTopRepos = () => {
 }
 
 const getTopUsers = () => {
+  let date = new Date()
+  console.log(date.getYear())
+  date.setFullYear(date.getYear() + 1900 - 1)
+  date = formatData(date)
+  console.log(date)
   return $.ajax({
-    url: 'apiUrl',
-    method: 'GET'
+    url: `https://api.github.com/search/users?q=created:${date}&sort=followers&order=desc&page=1&per_page=5`,
+    method: 'GET',
+    accepts: 'application/vnd.github.v3+json'
   })
+    .then(res => {
+      console.log(res)
+    })
 }
 
 const formatData = (date) => {
