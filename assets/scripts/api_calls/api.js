@@ -14,10 +14,8 @@ const getTopRepos = () => {
 
 const getTopUsers = () => {
   let date = new Date()
-  console.log(date.getYear())
   date.setFullYear(date.getYear() + 1900 - 1)
   date = helpers.formatData(date)
-  console.log(date)
   return $.ajax({
     url: `https://api.github.com/search/users?q=created:${date}&sort=followers&order=desc&page=1&per_page=5`,
     method: 'GET',

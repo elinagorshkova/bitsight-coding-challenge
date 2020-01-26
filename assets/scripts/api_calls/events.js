@@ -1,6 +1,7 @@
 'use strict'
 const api = require('./api')
 const ui = require('./ui')
+const store = require('./../store')
 
 const addHandlers = () => {
   $('#hot_repo').on('click', onGetTopRepos)
@@ -8,6 +9,7 @@ const addHandlers = () => {
 }
 
 const onGetTopRepos = () => {
+  clearInterval(store.intervalTimerId)
   api.getTopRepos()
     .then(ui.getTopReposSuccess)
     .catch(ui.failure)
@@ -15,7 +17,12 @@ const onGetTopRepos = () => {
 
 const onGetTopUsers = () => {
   api.getTopUsers()
-    .then(res => console.log(res))
+    .then((res) => {
+      ui.getTopUsersSuccess(res)
+      store.intervalTimerId = setInterval(function () {
+        ui.getTopUsersSuccess(res)
+      }, 120 * 1000)
+    })
     .catch(ui.failure)
 }
 

@@ -2,35 +2,35 @@
 <div class="table-container">
   <div class="table-row table-header">
     <div class="table-columns">
-      <h4>Repo Id</h4>
+      <h4>Users id</h4>
     </div>
     <div class="table-columns">
-      <h4>Name</h4>
+      <h4>Login</h4>
     </div>
     <div class="table-columns">
-      <h4>Description</h4>
+      <h4>Avatar image</h4>
     </div>
     <div class="table-columns">
-      <h4># of stars</h4>
+      <h4># of followers</h4>
     </div>
   </div>
-  {{#each repos as |repo|}}
+  {{#each users as |user|}}
 <div class="table-row table-body">
 
   <div class="table-columns">
-    <p>{{repo.id}}</p>
+    <p>{{user.id}}</p>
   </div>
 
   <div class="table-columns">
-    <p>{{repo.name}}</p>
+    <p>{{user.login}}</p>
   </div>
 
   <div class="table-columns">
-    <p>{{repo.description}}</p>
+    <img src={{user.avatar_url}} alt={{user.login}} height="50" width="50">
   </div>
 
   <div class="table-columns">
-    <p>{{repo.stargazers_count}}</p>
+    <p>{{user.followers}}</p>
   </div>
 
 </div>

@@ -4,17 +4,24 @@
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
     <body>
-      <button id='hot_repo'>Get the top repos</button>
-      <button id='prolific_users'>Get the top users</button>
+      <div id="header" class="row">
+        <div class="column"><p>BitSight Coding challege</p></div>
+        <div class="column"> <p>Solution by: Elina Gorshkova</p></div>
+      </div>
+      <div class="row" id="buttons-field">
+      <button class="button" id='hot_repo'>Get the top repos</button>
+      <p id="message">Welcome! Press a button</p>
+      <button class="button" id='prolific_users'>Get the top users</button>
+    </div>
       <fieldset>
       <div class='content'></div>
     </fieldset>
