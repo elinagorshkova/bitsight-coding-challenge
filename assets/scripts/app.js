@@ -5,7 +5,7 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const apiEvents = require('./api_calls/main')
+const apiEvents = require('./api_calls/events')
 
 $(() => {
   // your JS code goes here
