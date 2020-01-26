@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="row">
+    <div class="columns">
+      <h4>Repo Id</h4>
+    </div>
+    <div class="columns">
+      <h4>Name</h4>
+    </div>
+    <div class="columns">
+      <h4>Description</h4>
+    </div>
+    <div class="columns">
+      <h4># of stars</h4>
+    </div>
+  </div>
+  {{#each repos as |repo|}}
+<div class="row">
+
+  <div class="columns">
+    <p>{{repo.id}}</p>
+  </div>
+
+  <div class="columns">
+    <p>{{repo.name}}</p>
+  </div>
+
+  <div class="columns">
+    <p>{{repo.description}}</p>
+  </div>
+
+  <div class="columns">
+    <p>{{repo.stargazers_count}}</p>
+  </div>
+
+</div>
+
+{{/each}}
+</div>
