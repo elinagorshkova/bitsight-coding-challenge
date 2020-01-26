@@ -14,6 +14,9 @@
       <h4># of followers</h4>
     </div>
   </div>
+  <!--
+  Iterating through the users array and populating the table
+  -->
   {{#each users as |user|}}
 <div class="table-row table-body">
 
@@ -26,7 +29,7 @@
   </div>
 
   <div class="table-columns">
-    <img src={{user.avatar_url}} alt={{user.login}} height="50" width="50">
+    <img src={{user.avatar_url}} alt={{user.login}} height="100" width="100">
   </div>
 
   <div class="table-columns">
